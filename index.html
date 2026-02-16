@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body oncontextmenu="return false">
+    <header>
+        <nav class="bg-black h-1 flex justify-between items-center">
+            <div class="leftPanel flex justify-center items-center gap-1">
+                <img class="invert logo" src="/Assets/images/logo.svg" alt="logo">
+                <span class="rounded-full bg-gray-1 w-1 h-1 flex justify-center items-center hover-change">
+                    <img class="invert" src="/Assets/images/home.svg" alt="logo">
+                </span>
+                <div class="hover-change searchBox flex justify-between gap-1 items-center">
+                    <div class="flex justify-center items-center">
+                        <img class="invert" src="/Assets/images/search.svg" alt="search">
+                        <input class="searchInp outline-none" type="search" name="" id=""
+                            placeholder="What do you want to play?">
+                    </div>
+                    <img class="invert" src="/Assets/images/cart.svg" alt="cart">
+                </div>
+            </div>
+            <div class="rightPanel flex justify-between items-center w-2">
+                <div class="left-section flex justify-between items-center gap-sm">
+                    <span class="font-bold-1 text-gray-1 hover-text m-2">Premium</span>
+                    <span class="font-bold-1 text-gray-1 hover-text m-2">Support</span>
+                    <span class="font-bold-1 text-gray-1 hover-text m-2">Download</span>
+                </div>
+                <div class="right-section flex justify-between items-center gap-1">
+                    <span class="font-bold-1 flex justify-center items-center text-gray-1 hover-text m-2"><img
+                            class="invert" src="/Assets/images/install.svg" alt="">&nbsp;Install App</span>
+                    <span class="font-bold-1 text-gray-1 hover-text m-2">Sign up</span>
+                    <button class="loginBtn">Log in</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="flex">
+        <div class="left-block rounded-sm m-1">
+            <div class="flex justify-between items-center">
+                <h2>Your Songs</h2>
+                <span title="Create a Playlist, folder or Jam"
+                    class='rounded-full bg-gray-2 w-3 h-3 flex justify-center items-center hover-change-add'><img
+                        class="invert" src="/Assets/images/add.svg" alt="add"></span>
+            </div>
+          
+
+            <ul id="songsList">
+            </ul>
+        </div>
+        <div class="right-block rounded-sm m-1 flex flex-col gap-1">
+            <div class="songs-header">
+                <h2>Popular Songs</h2>
+            </div>
+            <div id="songsWithImages" class="songs-grid flex flex-wrap gap-1">
+             
+                
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Blinding Lights (PenduJatt.Com.Se).mp3', 'Blinding Lights', 'The Weeknd')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Blinding Lights">
+                    </div>
+                    <h4 style="color: white; margin: 0;">Blinding Lights</h4>
+                    <p style="color: #b3b3b3; margin: 0;">The Weeknd</p>
+                    <p style="color: #888; margin: 0;">3:20</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Shape Of You (PenduJatt.Com.Se).mp3', 'Shape of You', 'Ed Sheeran')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download2.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Shape of You">
+                    </div>
+                    <h4 style="color: white; margin: 0;">Shape of You</h4>
+                    <p style="color: #b3b3b3; margin: 0;">Ed Sheeran</p>
+                    <p style="color: #888; margin: 0;">3:53</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('The_weeknd_-_Starboy_Remix_Kirya_YK_(mp3.pm).mp3', 'Starboy Remix', 'The Weeknd')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download3.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Starboy Remix">
+                    </div>
+                    <h4 style="color: white; margin: 0;">Starboy Remix</h4>
+                    <p style="color: #b3b3b3; margin: 0;">The Weeknd</p>
+                    <p style="color: #888; margin: 0;">4:30</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Levitating.mp3', 'Levitating', 'Dua Lipa')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download4.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Levitating">
+                    </div>
+                    <h4 style="color: white; margin: 0;">Levitating</h4>
+                    <p style="color: #b3b3b3; margin: 0;">Dua Lipa</p>
+                    <p style="color: #888; margin: 0;">3:23</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Micale_Jackson_-_They_don_t_care_about_us_(mp3.pm).mp3', 'They Don\'t Care About Us', 'Michael Jackson')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download5.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="They Don't Care About Us">
+                    </div>
+                    <h4 style="color: white; margin: 0;">They Don\'t Care About Us</h4>
+                    <p style="color: #b3b3b3; margin: 0;">Michael Jackson</p>
+                    <p style="color: #888; margin: 0;">4:15</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Fairytale (PenduJatt.Com.Se).mp3', 'Fairytale', 'Alexander Rybak')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download6.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Fairytale">
+                    </div>
+                    <h4 style="color: white; margin: 0;">Fairytale</h4>
+                    <p style="color: #b3b3b3; margin: 0;">Alexander Rybak</p>
+                    <p style="color: #888; margin: 0;">3:05</p>
+                </div>
+                <div class="song-item" style="background: #2a2a2a; padding: 12px; border-radius: 8px; margin: 5px; width: 200px; cursor: pointer; transition: all 0.3s ease;" onclick="playRealSong('Tate_McRae_-_greedy._(mp3.pm) (1).mp3', 'greedy', 'Tate McRae')">
+                    <div class="play-overlay">
+                        <img src="/Assets/images/play-spotify.svg" alt="Play">
+                    </div>
+                    <div class="song-item-image" style="width: 100%; height: 120px; overflow: hidden; border-radius: 6px; margin-bottom: 10px;">
+                        <img src="/Assets/images/download7.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="greedy">
+                    </div>
+                    <h4 style="color: white; margin: 0;">greedy</h4>
+                    <p style="color: #b3b3b3; margin: 0;">Tate McRae</p>
+                    <p style="color: #888; margin: 0;">2:40</p>
+                </div>
+            </div>
+            <div id="playlist" class="playlist flex flex-wrap gap-1">
+                
+            </div>
+            <div class="playSection">
+                <div class="progress-container">
+                    <span id="currentTime" class="time-display">0:00</span>
+                    <input class="songRange" type="range" value="0" min="0" max="100" step="0.1" id="progressBar">
+                    <span id="totalTime" class="time-display">0:00</span>
+                </div>
+                <div class="controls flex gap-1">
+                    <img id="previousBtn" class="invert rotate-reverse-x cursor-pointer"
+                    src="/Assets/images/forward.svg" alt="">
+                    <img id="playBtn" class="invert cursor-pointer" src="/Assets/images/play.svg" alt="">
+                    <img id="nextBtn" class="invert cursor-pointer" src="/Assets/images/forward.svg" alt="">
+                    <div class="volume-container">
+                        <img id="volumeBtn" class="cursor-pointer" src="/Assets/images/volume.svg" alt="">
+                        <div class="volume-panel">
+                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                            <span id="volumeValue">70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/script.js"></script>
+
+</html>
